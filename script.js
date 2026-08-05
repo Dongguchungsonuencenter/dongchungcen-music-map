@@ -5,6 +5,25 @@
   const regions = Array.isArray(window.REGION_LIBRARY) ? window.REGION_LIBRARY : [];
   const afterCollection = window.AFTER_INDEPENDENCE_LIBRARY || null;
 
+
+  const mapImage = document.querySelector(".korea-map-art");
+  const mapContainer = document.querySelector(".korea-map-image");
+  const mapLoadError = document.getElementById("map-load-error");
+
+  function showMapLoadError() {
+    mapContainer?.classList.add("map-failed");
+    if (mapLoadError) mapLoadError.hidden = false;
+  }
+
+  if (mapImage) {
+    mapImage.addEventListener("error", showMapLoadError);
+    mapImage.addEventListener("load", () => {
+      mapContainer?.classList.remove("map-failed");
+      if (mapLoadError) mapLoadError.hidden = true;
+    });
+    if (mapImage.complete && !mapImage.naturalWidth) showMapLoadError();
+  }
+
   const els = {
     mapRegions: [...document.querySelectorAll(".region[data-region]")],
     mapPlayControls: [...document.querySelectorAll("[data-map-play]")],

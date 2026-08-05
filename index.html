@@ -7,7 +7,8 @@
   <meta name="description" content="한반도 지도에서 지역별 독립운동가 뮤직비디오와 독립 이후의 노래를 감상하는 815Hz 프로젝트" />
   <title>815Hz 프로젝트: 재생 중</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="korea-map-final.webp?v=20260805-6" as="image" type="image/webp" />
+  <link rel="stylesheet" href="style.css?v=20260805-6" />
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -22,7 +23,7 @@
     <div class="brush brush-red" aria-hidden="true"></div>
     <p class="eyebrow">청소년의 목소리로 역사를 다시 재생합니다</p>
     <h1><span aria-hidden="true">♪</span> 815Hz 프로젝트: 재생 중 <span aria-hidden="true">♫</span></h1>
-    <p class="subtitle">한반도 지도를 눌러 지역별 독립운동가<br class="mobile-break" />뮤직비디오를<br class="mobile-break" />감상해보세요.</p>
+    <p class="subtitle">한반도 지도를 눌러 지역별 독립운동가 뮤직비디오를 감상해보세요.</p>
   </header>
 
   <main id="main" class="layout">
@@ -32,16 +33,19 @@
           <p class="mini-title">INTERACTIVE MUSIC MAP</p>
           <h2 id="map-title">지역을 선택하세요</h2>
         </div>
-        <span class="map-help">표지 아래 재생 버튼을 누르면<br class="mobile-break" />영상이 바로 시작됩니다.</span>
+        <span class="map-help">표지 아래 재생 버튼을 누르면 영상이 바로 시작됩니다.</span>
       </div>
 
       <div class="map-wrap">
         <div class="korea-map-image" role="group" aria-label="지역별 뮤직비디오 지도">
           <img
-            src="assets/images/korea-map-final.png?v=20260805-3"
+            src="korea-map-final.webp?v=20260805-6"
             alt="북한, 서울·경기, 강원도, 충청도, 전라도, 경상도로 구분된 한반도 지도"
             class="korea-map-art"
+            decoding="async"
+            fetchpriority="high"
           />
+          <p id="map-load-error" class="map-load-error" hidden>지도를 불러오지 못했습니다. 저장소 첫 화면의 korea-map-final.webp 파일을 확인해주세요.</p>
 
           <button class="region map-cover-hotspot north-cover" data-region="north-korea"
             type="button" aria-label="북한 김구 대표 앨범 선택"></button>
@@ -76,7 +80,7 @@
 
         <div class="map-note">
           <span aria-hidden="true">✦</span>
-          <p><strong>표지를 확인한 뒤 재생 버튼을 누르면<br class="mobile-break" />바로 영상이 재생됩니다.</strong><br />경상도는 2편 중 감상할 영상을<br class="mobile-break" />먼저 선택합니다.</p>
+          <p><strong>표지를 확인한 뒤 재생 버튼을 누르면 바로 영상이 재생됩니다.</strong><br />경상도는 2편 중 감상할 영상을 먼저 선택합니다.</p>
         </div>
       </div>
 
@@ -86,7 +90,7 @@
             <p class="mini-title">AFTER INDEPENDENCE</p>
             <h2 id="after-independence-title">독립 이후의 노래</h2>
           </div>
-          <p>지도 아래에서 이어지는 우리의 역사와<br class="mobile-break" />오늘의 목소리를 만나보세요.</p>
+          <p>지도 아래에서 이어지는 우리의 역사와 오늘의 목소리를 만나보세요.</p>
         </div>
 
         <button class="after-album-card" type="button" data-after-video="haeil-01" aria-label="독립 이후의 노래 해일 뮤직비디오 재생">
@@ -97,7 +101,7 @@
           <span class="after-album-copy">
             <span class="after-badge">독립 이후의 노래</span>
             <strong>해일</strong>
-            <span>앨범 표지를 누르면<br class="mobile-break" />뮤직비디오가 바로 재생됩니다.</span>
+            <span>앨범 표지를 누르면 뮤직비디오가 바로 재생됩니다.</span>
           </span>
           <span class="after-card-meta">
             <span>재생 조회수</span>
@@ -110,30 +114,30 @@
     <section class="detail-card" aria-live="polite" aria-labelledby="detail-title">
       <div class="detail-topline">
         <div>
-          <p id="region-theme" class="mini-title"></p>
-          <h2 id="detail-title">지역 앨범</h2>
+          <p id="region-theme" class="mini-title">도시 위에 이어진 역사</p>
+          <h2 id="detail-title">서울·경기 대표 앨범</h2>
         </div>
-        <span id="video-count-badge" class="video-count-badge"></span>
+        <span id="video-count-badge" class="video-count-badge">1편</span>
       </div>
 
       <button id="album-toggle" class="album-button" type="button" aria-expanded="false" aria-controls="video-choice-list">
-        <img id="cover-image" src="" alt="" />
+        <img id="cover-image" src="assets/covers/seoul-gyeonggi.png" alt="유관순 독립운동가 이야기 앨범 표지" />
         <span class="album-overlay">
           <span class="album-play" aria-hidden="true">▶</span>
-          <span id="album-action-text">앨범 열기</span>
+          <span id="album-action-text">앨범을 눌러 바로 재생</span>
         </span>
       </button>
 
       <div class="album-copy">
-        <h3 id="video-title"></h3>
-        <p id="activist-name" class="activist-name"></p>
-        <p id="region-description"></p>
+        <h3 id="video-title">유관순 독립운동가 이야기</h3>
+        <p id="activist-name" class="activist-name">유관순</p>
+        <p id="region-description">서울과 경기 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.</p>
       </div>
 
       <div id="video-choice-wrap" class="choice-wrap" hidden>
         <div class="choice-title-row">
           <h3>뮤직비디오 선택</h3>
-          <span>감상할 영상을<br class="mobile-break" />눌러주세요.</span>
+          <span>감상할 영상을 눌러주세요.</span>
         </div>
         <div id="video-choice-list" class="video-choice-list"></div>
       </div>
@@ -141,7 +145,7 @@
       <div class="play-row">
         <button id="play-button" class="primary-button" type="button">
           <span aria-hidden="true">▶</span>
-          <span>뮤직비디오<br class="mobile-break" />바로 재생</span>
+          <span>뮤직비디오 바로 재생</span>
         </button>
         <div class="view-box" title="선택한 영상의 재생 조회수">
           <span class="view-label">재생 조회수</span>
@@ -169,7 +173,7 @@
             <textarea id="comment-text" name="comment" rows="3" maxlength="300" required placeholder="뮤직비디오를 보고 느낀 점을 남겨주세요."></textarea>
           </label>
           <div class="comment-form-bottom">
-            <p>욕설·개인정보가 포함된 댓글은<br class="mobile-break" />관리자가 숨기거나 삭제할 수 있습니다.</p>
+            <p>욕설·개인정보가 포함된 댓글은 관리자가 숨기거나 삭제할 수 있습니다.</p>
             <button class="secondary-button" type="submit">댓글 등록</button>
           </div>
         </form>
@@ -182,7 +186,7 @@
 
   <footer class="site-footer">
     <img src="assets/images/footer-brand.png" alt="울산광역시동구청소년센터와 국가보훈부" />
-    <p>청소년이 만든 지역별 독립운동가 음악과 영상을 통해<br class="mobile-break" />광복의 의미를 오늘의 목소리로 이어갑니다.</p>
+    <p>청소년이 만든 지역별 독립운동가 음악과 영상을 통해 광복의 의미를 오늘의 목소리로 이어갑니다.</p>
     <a class="admin-link" href="admin.html" rel="nofollow">관리자</a>
   </footer>
 
@@ -199,8 +203,8 @@
   </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js"></script>
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script src="config.js?v=20260805-6"></script>
+  <script src="data.js?v=20260805-6"></script>
+  <script src="script.js?v=20260805-6"></script>
 </body>
 </html>
