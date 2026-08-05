@@ -8,7 +8,7 @@
   <title>815Hz 프로젝트: 재생 중</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="korea-map-final.webp?v=20260805-6" as="image" type="image/webp" />
-  <link rel="stylesheet" href="style.css?v=20260805-yt1" />
+  <link rel="stylesheet" href="style.css?v=20260805-yt2" />
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -47,33 +47,46 @@
           />
           <p id="map-load-error" class="map-load-error" hidden>지도를 불러오지 못했습니다. 저장소 첫 화면의 korea-map-final.webp 파일을 확인해주세요.</p>
 
-          <button class="region map-cover-hotspot north-cover" data-region="north-korea"
-            type="button" aria-label="북한 김구 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button north-cover" data-region="north-korea"
+            type="button" aria-label="북한 김구 대표 앨범 선택">
+            <img src="assets/covers/north-korea.png" alt="북한 김구 앨범 표지" />
+          </button>
           <button class="map-play-hotspot north-play" data-map-play="north-korea"
             type="button" aria-label="북한 김구 뮤직비디오 바로 재생"></button>
 
-          <button class="region map-cover-hotspot seoul-cover" data-region="seoul-gyeonggi"
-            type="button" aria-label="서울·경기 유관순 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button seoul-cover" data-region="seoul-gyeonggi"
+            type="button" aria-label="서울·경기 유관순 대표 앨범 선택">
+            <img src="assets/covers/seoul-gyeonggi.png" alt="서울·경기 유관순 앨범 표지" />
+          </button>
           <button class="map-play-hotspot seoul-play" data-map-play="seoul-gyeonggi"
             type="button" aria-label="서울·경기 유관순 뮤직비디오 바로 재생"></button>
 
-          <button class="region map-cover-hotspot gangwon-cover" data-region="gangwon"
-            type="button" aria-label="강원도 유인석 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button gangwon-cover" data-region="gangwon"
+            type="button" aria-label="강원도 유인석 대표 앨범 선택">
+            <img src="assets/covers/gangwon.png" alt="강원도 유인석 앨범 표지" />
+          </button>
           <button class="map-play-hotspot gangwon-play" data-map-play="gangwon"
             type="button" aria-label="강원도 유인석 뮤직비디오 바로 재생"></button>
 
-          <button class="region map-cover-hotspot chungcheong-cover" data-region="chungcheong"
-            type="button" aria-label="충청도 윤봉길 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button chungcheong-cover" data-region="chungcheong"
+            type="button" aria-label="충청도 윤봉길 대표 앨범 선택">
+            <img src="assets/covers/chungcheong.png" alt="충청도 윤봉길 앨범 표지" />
+          </button>
           <button class="map-play-hotspot chungcheong-play" data-map-play="chungcheong"
             type="button" aria-label="충청도 윤봉길 뮤직비디오 바로 재생"></button>
 
-          <button class="region map-cover-hotspot jeolla-cover" data-region="jeolla"
-            type="button" aria-label="전라도 백정기 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button jeolla-cover" data-region="jeolla"
+            type="button" aria-label="전라도 백정기 대표 앨범 선택">
+            <img src="assets/covers/jeolla.png" alt="전라도 백정기 앨범 표지" />
+          </button>
           <button class="map-play-hotspot jeolla-play" data-map-play="jeolla"
             type="button" aria-label="전라도 백정기 뮤직비디오 바로 재생"></button>
 
-          <button class="region map-cover-hotspot gyeongsang-cover" data-region="gyeongsang"
-            type="button" aria-label="경상도 성세빈·박상진 대표 앨범 선택"></button>
+          <button class="region map-cover-hotspot map-cover-button gyeongsang-cover" data-region="gyeongsang"
+            type="button" aria-label="경상도 성세빈·박상진 대표 앨범 선택">
+            <img src="assets/covers/gyeongsang-1.png" alt="경상도 대표 앨범 표지" />
+            <span class="map-cover-badge" aria-hidden="true">2편</span>
+          </button>
           <button class="map-play-hotspot gyeongsang-play" data-map-play="gyeongsang"
             type="button" aria-label="경상도 뮤직비디오 2편 선택"></button>
         </div>
@@ -216,8 +229,8 @@
   </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js?v=20260805-yt1"></script>
-  <script src="data.js?v=20260805-yt1"></script>
-  <script src="script.js?v=20260805-yt1"></script>
+  <script src="config.js?v=20260805-yt2"></script>
+  <script src="data.js?v=20260805-yt2"></script>
+  <script src="script.js?v=20260805-yt2"></script>
 </body>
 </html>

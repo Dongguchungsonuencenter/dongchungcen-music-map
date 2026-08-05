@@ -969,3 +969,82 @@ textarea,
     word-break: keep-all;
   }
 }
+
+
+/* =========================================================
+   지도 위 앨범 표지 표시 보완
+   ========================================================= */
+.map-cover-button {
+  display: block;
+  overflow: visible;
+  border: 3px solid rgba(255, 250, 240, .96);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(20, 40, 76, .22);
+}
+
+.map-cover-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 9px;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.map-cover-button:hover,
+.map-cover-button:focus-visible,
+.map-cover-button.active {
+  outline: 4px solid rgba(33, 60, 107, .88);
+  outline-offset: 3px;
+  border-color: #fffaf0;
+  box-shadow: 0 10px 24px rgba(20, 40, 76, .28);
+}
+
+.map-cover-button.active {
+  outline-color: rgba(166, 61, 63, .92);
+}
+
+.map-cover-badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  min-height: 28px;
+  padding: 4px 8px;
+  border: 2px solid #fffaf0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--red);
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.map-play-hotspot {
+  z-index: 4;
+}
+
+@media (max-width: 640px) {
+  .map-cover-button {
+    border-width: 2px;
+    border-radius: 10px;
+  }
+
+  .map-cover-button img {
+    border-radius: 8px;
+  }
+
+  .map-cover-badge {
+    right: -6px;
+    top: -6px;
+    min-width: 36px;
+    min-height: 24px;
+    font-size: .72rem;
+  }
+}
