@@ -7,7 +7,7 @@
      댓글은 현재 브라우저에만 저장되고 관리자 페이지는 사용할 수 없습니다.
 */
 window.APP_CONFIG = {
-  supabaseUrl: "","https://txxwjvdssffdyjjvmxre.supabase.co/rest/v1/",
+  supabaseUrl: "https://txxwjvdssffdyjjvmxre.supabase.co",
   supabaseAnonKey: "sb_publishable_R0cZbSmeGg7zH69Hp-lY5Q_dhA98pzk",
   projectTitle: "815Hz 프로젝트: 재생 중",
   commentsEnabled: true,
