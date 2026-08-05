@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#14284c" />
+  <meta name="description" content="한반도 지도에서 지역별 독립운동가 뮤직비디오와 독립 이후의 노래를 감상하는 815Hz 프로젝트" />
+  <title>815Hz 프로젝트: 재생 중</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <div class="topbar">
+    <strong class="project-mark">◉ <span>815Hz</span> PROJECT</strong>
+    <p>이 프로젝트는 독립유공자들의 희생과 헌신을 기억합니다.</p>
+  </div>
+
+  <header class="site-header">
+    <div class="brush brush-blue" aria-hidden="true"></div>
+    <div class="brush brush-red" aria-hidden="true"></div>
+    <p class="eyebrow">청소년의 목소리로 역사를 다시 재생합니다</p>
+    <h1><span aria-hidden="true">♪</span> 815Hz 프로젝트: 재생 중 <span aria-hidden="true">♫</span></h1>
+    <p class="subtitle">한반도 지도를 눌러 지역별 독립운동가 뮤직비디오를 감상해보세요.</p>
+  </header>
+
+  <main id="main" class="layout">
+    <section class="map-card" aria-labelledby="map-title">
+      <div class="section-heading">
+        <div>
+          <p class="mini-title">INTERACTIVE MUSIC MAP</p>
+          <h2 id="map-title">지역을 선택하세요</h2>
+        </div>
+        <span class="map-help">표지 아래 재생 버튼을 누르면 영상이 바로 시작됩니다.</span>
+      </div>
+
+      <div class="map-wrap">
+        <svg class="korea-map" viewBox="0 0 520 760" role="img" aria-labelledby="svg-title svg-desc">
+          <title id="svg-title">뮤직비디오를 선택할 수 있는 한반도 지도</title>
+          <desc id="svg-desc">실제 한반도 외곽선을 바탕으로 북한, 서울 경기, 강원도, 충청도, 전라도, 경상도 여섯 권역으로 나뉜 지도입니다. 각 앨범 표지 아래 재생 버튼이 있습니다.</desc>
+
+          <defs>
+            <filter id="mapShadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#14284c" flood-opacity="0.18"/>
+            </filter>
+            <filter id="coverShadow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#14284c" flood-opacity="0.28"/>
+            </filter>
+            <pattern id="paper" width="18" height="18" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="1" fill="#ffffff" opacity="0.14"/>
+              <circle cx="13" cy="10" r="0.8" fill="#14284c" opacity="0.05"/>
+            </pattern>
+          </defs>
+
+          <g class="peninsula" filter="url(#mapShadow)">
+            <path class="region region-shape north" data-region="north-korea" tabindex="0" role="button" aria-label="북한 김구 대표 앨범 선택" d="M 439.8 102.9 L 439.8 102.9 L 448.0 116.0 L 425.8 111.5 L 400.5 136.9 L 383.1 162.3 L 385.3 216.0 L 355.1 232.5 L 344.8 245.7 L 322.8 267.7 L 283.9 280.0 L 258.6 300.1 L 256.8 332.5 L 250.0 340.7 L 273.2 352.9 L 306.2 385.6 L 297.8 403.7 L 273.0 408.6 L 231.8 412.3 L 209.1 446.0 L 183.0 443.3 L 179.4 450.1 L 151.0 435.9 L 144.0 449.9 L 126.9 456.1 L 124.8 442.1 L 109.7 435.2 L 94.0 423.3 L 110.0 390.4 L 123.8 381.6 L 118.6 368.0 L 133.4 327.7 L 129.6 315.5 L 95.5 307.3 L 68.0 287.3 L 115.5 239.3 L 179.8 199.2 L 219.9 146.2 L 247.6 169.6 L 298.0 172.3 L 288.9 132.9 L 379.0 100.7 L 402.2 58.8 L 439.8 102.9 Z"/>
+            <path class="region region-shape seoul" data-region="seoul-gyeonggi" tabindex="0" role="button" aria-label="서울 경기 유관순 대표 앨범 선택" d="M 183.0 443.3 L 209.1 446.0 L 231.8 412.3 L 271.1 408.8 L 259.6 509.9 L 208.3 517.3 L 219.3 514.1 L 179.4 450.1 L 183.0 443.3 Z"/>
+            <path class="region region-shape gangwon" data-region="gangwon" tabindex="0" role="button" aria-label="강원도 유인석 대표 앨범 선택" d="M 273.0 408.6 L 297.8 403.7 L 306.2 385.6 L 356.6 473.8 L 371.0 522.3 L 371.3 565.9 L 294.6 565.9 L 259.6 509.9 L 259.6 409.8 L 273.0 408.6 Z"/>
+            <path class="region region-shape chungcheong" data-region="chungcheong" tabindex="0" role="button" aria-label="충청도 윤봉길 대표 앨범 선택" d="M 201.8 604.4 L 176.0 526.6 L 219.3 514.1 L 216.7 509.9 L 259.6 509.9 L 294.6 565.9 L 282.9 622.0 L 221.7 622.0 L 198.8 619.9 L 201.8 604.4 Z"/>
+            <path class="region region-shape jeolla" data-region="jeolla" tabindex="0" role="button" aria-label="전라도 백정기 대표 앨범 선택" d="M 250.0 694.8 L 197.5 701.2 L 191.0 660.5 L 199.1 618.5 L 221.7 622.0 L 282.9 622.0 L 279.1 675.4 L 250.0 694.8 Z"/>
+            <path class="region region-shape gyeongsang" data-region="gyeongsang" tabindex="0" role="button" aria-label="경상도 성세빈 박상진 대표 앨범 두 편 선택" d="M 371.5 608.3 L 349.5 649.4 L 296.7 663.8 L 250.0 694.8 L 279.1 675.4 L 282.9 622.0 L 294.6 565.9 L 371.3 565.9 L 371.0 522.3 L 371.5 608.3 Z"/>
+            <path class="peninsula-texture" d="M 356.6 473.8 L 371.0 522.3 L 371.5 608.3 L 349.5 649.4 L 296.7 663.8 L 250.0 694.8 L 197.5 701.2 L 191.0 660.5 L 201.8 604.4 L 176.0 526.6 L 219.3 514.1 L 179.4 450.1 L 151.0 435.9 L 144.0 449.9 L 126.9 456.1 L 124.8 442.1 L 109.7 435.2 L 94.0 423.3 L 110.0 390.4 L 123.8 381.6 L 118.6 368.0 L 133.4 327.7 L 129.6 315.5 L 95.5 307.3 L 68.0 287.3 L 115.5 239.3 L 179.8 199.2 L 219.9 146.2 L 247.6 169.6 L 298.0 172.3 L 288.9 132.9 L 379.0 100.7 L 402.2 58.8 L 439.8 102.9 L 439.8 102.9 L 448.0 116.0 L 425.8 111.5 L 400.5 136.9 L 383.1 162.3 L 385.3 216.0 L 355.1 232.5 L 344.8 245.7 L 322.8 267.7 L 283.9 280.0 L 258.6 300.1 L 256.8 332.5 L 250.0 340.7 L 273.2 352.9 L 306.2 385.6 L 356.6 473.8 Z" fill="url(#paper)" pointer-events="none"/>
+            <path class="peninsula-outline" d="M 356.6 473.8 L 371.0 522.3 L 371.5 608.3 L 349.5 649.4 L 296.7 663.8 L 250.0 694.8 L 197.5 701.2 L 191.0 660.5 L 201.8 604.4 L 176.0 526.6 L 219.3 514.1 L 179.4 450.1 L 151.0 435.9 L 144.0 449.9 L 126.9 456.1 L 124.8 442.1 L 109.7 435.2 L 94.0 423.3 L 110.0 390.4 L 123.8 381.6 L 118.6 368.0 L 133.4 327.7 L 129.6 315.5 L 95.5 307.3 L 68.0 287.3 L 115.5 239.3 L 179.8 199.2 L 219.9 146.2 L 247.6 169.6 L 298.0 172.3 L 288.9 132.9 L 379.0 100.7 L 402.2 58.8 L 439.8 102.9 L 439.8 102.9 L 448.0 116.0 L 425.8 111.5 L 400.5 136.9 L 383.1 162.3 L 385.3 216.0 L 355.1 232.5 L 344.8 245.7 L 322.8 267.7 L 283.9 280.0 L 258.6 300.1 L 256.8 332.5 L 250.0 340.7 L 273.2 352.9 L 306.2 385.6 L 356.6 473.8 Z"/>
+          </g>
+
+
+          <clipPath id="clip-north-korea"><rect x="217" y="180" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="north-korea" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="213" y="176" width="78" height="78" rx="12"/>
+            <image href="assets/covers/north-korea.png" x="217" y="180" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-north-korea)"/>
+          </g>
+          <g class="map-play-control" data-map-play="north-korea" tabindex="0" role="button" aria-label="북한 김구 뮤직비디오 바로 재생">
+            <circle cx="252" cy="256" r="20"/><path d="M 246 244 L 246 268 L 265 256 Z"/>
+          </g>
+          <text class="map-label" x="252" y="296">북한</text>
+
+
+          <clipPath id="clip-seoul-gyeonggi"><rect x="162" y="387" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="seoul-gyeonggi" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="158" y="383" width="78" height="78" rx="12"/>
+            <image href="assets/covers/seoul-gyeonggi.png" x="162" y="387" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-seoul-gyeonggi)"/>
+          </g>
+          <g class="map-play-control" data-map-play="seoul-gyeonggi" tabindex="0" role="button" aria-label="서울 경기 유관순 뮤직비디오 바로 재생">
+            <circle cx="197" cy="463" r="20"/><path d="M 191 451 L 191 475 L 210 463 Z"/>
+          </g>
+          <text class="map-label" x="197" y="505">서울·경기</text>
+
+
+          <clipPath id="clip-gangwon"><rect x="300" y="409" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="gangwon" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="296" y="405" width="78" height="78" rx="12"/>
+            <image href="assets/covers/gangwon.png" x="300" y="409" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-gangwon)"/>
+          </g>
+          <g class="map-play-control" data-map-play="gangwon" tabindex="0" role="button" aria-label="강원도 유인석 뮤직비디오 바로 재생">
+            <circle cx="335" cy="485" r="20"/><path d="M 329 473 L 329 497 L 348 485 Z"/>
+          </g>
+          <text class="map-label" x="335" y="527">강원도</text>
+
+
+          <clipPath id="clip-chungcheong"><rect x="176" y="518" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="chungcheong" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="172" y="514" width="78" height="78" rx="12"/>
+            <image href="assets/covers/chungcheong.png" x="176" y="518" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-chungcheong)"/>
+          </g>
+          <g class="map-play-control" data-map-play="chungcheong" tabindex="0" role="button" aria-label="충청도 윤봉길 뮤직비디오 바로 재생">
+            <circle cx="211" cy="594" r="20"/><path d="M 205 582 L 205 606 L 224 594 Z"/>
+          </g>
+          <text class="map-label" x="211" y="635">충청도</text>
+
+
+          <clipPath id="clip-jeolla"><rect x="158" y="624" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="jeolla" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="154" y="620" width="78" height="78" rx="12"/>
+            <image href="assets/covers/jeolla.png" x="158" y="624" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-jeolla)"/>
+          </g>
+          <g class="map-play-control" data-map-play="jeolla" tabindex="0" role="button" aria-label="전라도 백정기 뮤직비디오 바로 재생">
+            <circle cx="193" cy="700" r="20"/><path d="M 187 688 L 187 712 L 206 700 Z"/>
+          </g>
+          <text class="map-label" x="193" y="741">전라도</text>
+
+
+          <clipPath id="clip-gyeongsang"><rect x="306" y="570" width="70" height="70" rx="9"/></clipPath>
+          <g class="map-album" data-region-select="gyeongsang" aria-hidden="true" filter="url(#coverShadow)">
+            <rect x="302" y="566" width="78" height="78" rx="12"/>
+            <image href="assets/covers/gyeongsang-1.png" x="306" y="570" width="70" height="70" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-gyeongsang)"/>
+          </g>
+          <g class="map-play-control" data-map-play="gyeongsang" tabindex="0" role="button" aria-label="경상도 성세빈 박상진 뮤직비디오 두 편 선택">
+            <circle cx="341" cy="646" r="20"/><path d="M 335 634 L 335 658 L 354 646 Z"/>
+          </g>
+          <text class="map-label" x="341" y="687">경상도</text>
+          <g class="map-count-badge" transform="translate(341,718)" aria-hidden="true">
+            <rect x="-31" y="-16" width="62" height="32" rx="16"/><text x="0" y="6">2편</text>
+          </g>
+
+        </svg>
+
+        <div class="map-note">
+          <span aria-hidden="true">✦</span>
+          <p><strong>표지를 확인한 뒤 재생 버튼을 누르면 바로 영상이 재생됩니다.</strong><br />경상도는 2편 중 감상할 영상을 먼저 선택합니다.</p>
+        </div>
+      </div>
+
+      <section class="after-independence" aria-labelledby="after-independence-title">
+        <div class="after-heading">
+          <div>
+            <p class="mini-title">AFTER INDEPENDENCE</p>
+            <h2 id="after-independence-title">독립 이후의 노래</h2>
+          </div>
+          <p>지도 아래에서 이어지는 우리의 역사와 오늘의 목소리를 만나보세요.</p>
+        </div>
+
+        <button class="after-album-card" type="button" data-after-video="haeil-01" aria-label="독립 이후의 노래 해일 뮤직비디오 재생">
+          <span class="after-cover-wrap">
+            <img src="assets/covers/haeil.png" alt="독립 이후의 노래 해일 앨범 표지" />
+            <span class="after-play" aria-hidden="true">▶</span>
+          </span>
+          <span class="after-album-copy">
+            <span class="after-badge">독립 이후의 노래</span>
+            <strong>해일</strong>
+            <span>앨범 표지를 누르면 뮤직비디오가 바로 재생됩니다.</span>
+          </span>
+          <span class="after-card-meta">
+            <span>재생 조회수</span>
+            <strong id="after-view-haeil-01">0</strong>
+          </span>
+        </button>
+      </section>
+    </section>
+
+    <section class="detail-card" aria-live="polite" aria-labelledby="detail-title">
+      <div class="detail-topline">
+        <div>
+          <p id="region-theme" class="mini-title"></p>
+          <h2 id="detail-title">지역 앨범</h2>
+        </div>
+        <span id="video-count-badge" class="video-count-badge"></span>
+      </div>
+
+      <button id="album-toggle" class="album-button" type="button" aria-expanded="false" aria-controls="video-choice-list">
+        <img id="cover-image" src="" alt="" />
+        <span class="album-overlay">
+          <span class="album-play" aria-hidden="true">▶</span>
+          <span id="album-action-text">앨범 열기</span>
+        </span>
+      </button>
+
+      <div class="album-copy">
+        <h3 id="video-title"></h3>
+        <p id="activist-name" class="activist-name"></p>
+        <p id="region-description"></p>
+      </div>
+
+      <div id="video-choice-wrap" class="choice-wrap" hidden>
+        <div class="choice-title-row">
+          <h3>뮤직비디오 선택</h3>
+          <span>감상할 영상을 눌러주세요.</span>
+        </div>
+        <div id="video-choice-list" class="video-choice-list"></div>
+      </div>
+
+      <div class="play-row">
+        <button id="play-button" class="primary-button" type="button">
+          <span aria-hidden="true">▶</span>
+          <span>뮤직비디오 바로 재생</span>
+        </button>
+        <div class="view-box" title="선택한 영상의 재생 조회수">
+          <span class="view-label">재생 조회수</span>
+          <strong id="view-count">0</strong>
+        </div>
+      </div>
+
+      <section id="comment-section" class="comments" aria-labelledby="comments-title">
+        <div class="comments-heading">
+          <div>
+            <p class="mini-title">YOUR MESSAGE</p>
+            <h3 id="comments-title">감상 한마디</h3>
+          </div>
+          <span id="comment-count">0개</span>
+        </div>
+
+        <form id="comment-form" class="comment-form">
+          <input class="comment-honeypot" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label>
+            <span>이름 또는 별명</span>
+            <input id="nickname" name="nickname" maxlength="20" required placeholder="예: 815Hz 관람객" autocomplete="nickname" />
+          </label>
+          <label>
+            <span>댓글</span>
+            <textarea id="comment-text" name="comment" rows="3" maxlength="300" required placeholder="뮤직비디오를 보고 느낀 점을 남겨주세요."></textarea>
+          </label>
+          <div class="comment-form-bottom">
+            <p>욕설·개인정보가 포함된 댓글은 관리자가 숨기거나 삭제할 수 있습니다.</p>
+            <button class="secondary-button" type="submit">댓글 등록</button>
+          </div>
+        </form>
+
+        <p id="storage-notice" class="storage-notice" hidden></p>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/images/footer-brand.png" alt="울산광역시동구청소년센터와 국가보훈부" />
+    <p>청소년이 만든 지역별 독립운동가 음악과 영상을 통해 광복의 의미를 오늘의 목소리로 이어갑니다.</p>
+    <a class="admin-link" href="admin.html" rel="nofollow">관리자</a>
+  </footer>
+
+  <dialog id="video-dialog" class="video-dialog">
+    <div class="dialog-card">
+      <button id="close-dialog" class="dialog-close" type="button" aria-label="영상 닫기">×</button>
+      <div class="dialog-heading">
+        <p id="dialog-region" class="mini-title"></p>
+        <h2 id="dialog-title"></h2>
+      </div>
+      <video id="video-player" controls playsinline preload="metadata"></video>
+      <p id="video-error" class="video-error" hidden>영상 파일을 불러오지 못했습니다. assets/videos 폴더의 파일명을 확인해주세요.</p>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
