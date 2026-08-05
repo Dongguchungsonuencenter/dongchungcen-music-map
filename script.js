@@ -53,6 +53,8 @@
     dialogRegion: document.getElementById("dialog-region"),
     dialogTitle: document.getElementById("dialog-title"),
     videoPlayer: document.getElementById("video-player"),
+    youtubePlayer: document.getElementById("youtube-player"),
+    youtubeFallbackLink: document.getElementById("youtube-fallback-link"),
     videoError: document.getElementById("video-error"),
     afterAlbumButtons: [...document.querySelectorAll(".after-album-card[data-after-video]")],
   };
@@ -77,6 +79,38 @@
         detectSessionInUrl: true,
       },
     });
+  }
+
+  function getYouTubeId(url) {
+    if (!url || typeof url !== "string") return "";
+
+    try {
+      const parsed = new URL(url, window.location.href);
+      const host = parsed.hostname.replace(/^www\./, "");
+
+      if (host === "youtu.be") return parsed.pathname.split("/").filter(Boolean)[0] || "";
+      if (host === "youtube.com" || host === "m.youtube.com" || host === "youtube-nocookie.com") {
+        if (parsed.pathname === "/watch") return parsed.searchParams.get("v") || "";
+        const parts = parsed.pathname.split("/").filter(Boolean);
+        if (["embed", "shorts", "live"].includes(parts[0])) return parts[1] || "";
+      }
+    } catch {
+      return "";
+    }
+
+    return "";
+  }
+
+  function buildYouTubeEmbedUrl(url) {
+    const id = getYouTubeId(url);
+    if (!id) return "";
+    const params = new URLSearchParams({
+      autoplay: "1",
+      playsinline: "1",
+      rel: "0",
+      modestbranding: "1",
+    });
+    return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?${params.toString()}`;
   }
 
   function localKey(kind, videoId) {
@@ -356,11 +390,33 @@
     if (!selectedVideo) return;
 
     const playingVideoId = selectedVideo.id;
+    const youtubeEmbedUrl = buildYouTubeEmbedUrl(selectedVideo.youtube || "");
     els.videoError.hidden = true;
     els.dialogRegion.textContent = selectedRegion.name;
     els.dialogTitle.textContent = selectedVideo.title;
-    els.videoPlayer.src = selectedVideo.video;
+
+    // 이전에 재생하던 소스를 먼저 정리합니다.
+    els.videoPlayer.pause();
+    els.videoPlayer.removeAttribute("src");
     els.videoPlayer.load();
+    els.videoPlayer.hidden = true;
+    els.youtubePlayer.src = "about:blank";
+    els.youtubePlayer.hidden = true;
+    els.youtubeFallbackLink.hidden = true;
+
+    if (youtubeEmbedUrl) {
+      els.youtubePlayer.src = youtubeEmbedUrl;
+      els.youtubePlayer.hidden = false;
+      els.youtubeFallbackLink.href = selectedVideo.youtube;
+      els.youtubeFallbackLink.hidden = false;
+    } else if (selectedVideo.video) {
+      els.videoPlayer.src = selectedVideo.video;
+      els.videoPlayer.hidden = false;
+      els.videoPlayer.load();
+    } else {
+      els.videoError.hidden = false;
+      return;
+    }
 
     if (typeof els.dialog.showModal === "function") {
       els.dialog.showModal();
@@ -368,10 +424,12 @@
       els.dialog.setAttribute("open", "");
     }
 
-    try {
-      await els.videoPlayer.play();
-    } catch {
-      // 브라우저가 자동재생을 막으면 영상 내부 재생 버튼을 누르면 됩니다.
+    if (!youtubeEmbedUrl) {
+      try {
+        await els.videoPlayer.play();
+      } catch {
+        // 브라우저가 자동재생을 막으면 영상 내부 재생 버튼을 누르면 됩니다.
+      }
     }
 
     const newCount = await incrementViews(playingVideoId);
@@ -385,6 +443,12 @@
     els.videoPlayer.pause();
     els.videoPlayer.removeAttribute("src");
     els.videoPlayer.load();
+    els.videoPlayer.hidden = true;
+    els.youtubePlayer.src = "about:blank";
+    els.youtubePlayer.hidden = true;
+    els.youtubeFallbackLink.hidden = true;
+    els.videoError.hidden = true;
+
     if (typeof els.dialog.close === "function") els.dialog.close();
     else els.dialog.removeAttribute("open");
   }

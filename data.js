@@ -1,8 +1,25 @@
 /*
-  실제 앨범 이미지와 뮤직비디오를 바꿀 때 이 파일만 수정해도 됩니다.
-  cover: 앨범 이미지 경로
-  video: mp4 파일 경로 또는 유튜브가 아닌 직접 재생 가능한 영상 URL
+  815Hz 영상 링크 설정
+
+  유튜브 영상이 바뀌면 아래 YOUTUBE_LINKS의 주소만 교체하세요.
+  다른 파일(index.html, script.js)은 수정하지 않아도 됩니다.
+
+  교체 가능성이 있는 영상:
+  - 충청도 윤봉길
+  - 경상도 2 박상진
+  - 서울·경기 유관순
 */
+const YOUTUBE_LINKS = {
+  chungcheong: "https://youtu.be/a7El_k3DAbU", // 변경 가능
+  gangwon: "https://youtu.be/534v2Cy8rfg",
+  gyeongsang1: "https://youtu.be/qVsEJnwKnm0",
+  gyeongsang2: "https://youtu.be/l1ve4JBtn-I", // 변경 가능
+  jeolla: "https://youtu.be/MKj_84ebmXg",
+  northKorea: "https://youtu.be/QV_agrIPdaQ",
+  seoulGyeonggi: "https://youtu.be/Mm6s0OzFo2g", // 변경 가능
+  afterIndependence: "https://youtu.be/D7rqcv_ffnI",
+};
+
 window.REGION_LIBRARY = [
   {
     id: "north-korea",
@@ -13,10 +30,10 @@ window.REGION_LIBRARY = [
     videos: [
       {
         id: "north-korea-01",
-        title: "김구 독립운동가 이야기",
-        activist: "김구",
+        title: "백범 김구 독립운동가 이야기",
+        activist: "백범 김구",
         cover: "assets/covers/north-korea.png",
-        video: "assets/videos/north-korea.mp4",
+        youtube: YOUTUBE_LINKS.northKorea,
       },
     ],
   },
@@ -32,7 +49,7 @@ window.REGION_LIBRARY = [
         title: "유관순 독립운동가 이야기",
         activist: "유관순",
         cover: "assets/covers/seoul-gyeonggi.png",
-        video: "assets/videos/seoul-gyeonggi.mp4",
+        youtube: YOUTUBE_LINKS.seoulGyeonggi,
       },
     ],
   },
@@ -48,7 +65,7 @@ window.REGION_LIBRARY = [
         title: "유인석 독립운동가 이야기",
         activist: "유인석",
         cover: "assets/covers/gangwon.png",
-        video: "assets/videos/gangwon.mp4",
+        youtube: YOUTUBE_LINKS.gangwon,
       },
     ],
   },
@@ -64,7 +81,7 @@ window.REGION_LIBRARY = [
         title: "윤봉길 독립운동가 이야기",
         activist: "윤봉길",
         cover: "assets/covers/chungcheong.png",
-        video: "assets/videos/chungcheong.mp4",
+        youtube: YOUTUBE_LINKS.chungcheong,
       },
     ],
   },
@@ -80,7 +97,7 @@ window.REGION_LIBRARY = [
         title: "백정기 독립운동가 이야기",
         activist: "백정기",
         cover: "assets/covers/jeolla.png",
-        video: "assets/videos/jeolla.mp4",
+        youtube: YOUTUBE_LINKS.jeolla,
       },
     ],
   },
@@ -96,24 +113,19 @@ window.REGION_LIBRARY = [
         title: "성세빈 독립운동가 이야기",
         activist: "성세빈",
         cover: "assets/covers/gyeongsang-1.png",
-        video: "assets/videos/gyeongsang-1.mp4",
+        youtube: YOUTUBE_LINKS.gyeongsang1,
       },
       {
         id: "gyeongsang-02",
         title: "박상진 독립운동가 이야기",
         activist: "박상진",
         cover: "assets/covers/gyeongsang-2.png",
-        video: "assets/videos/gyeongsang-2.mp4",
+        youtube: YOUTUBE_LINKS.gyeongsang2,
       },
     ],
   },
 ];
 
-/*
-  지도 아래에 표시되는 '독립 이후의 노래' 앨범입니다.
-  새 노래를 추가할 때는 videos 배열 안에 같은 형식으로 항목을 추가하고,
-  index.html의 after-album-card를 복사해 data-after-video 값만 영상 id에 맞춰주세요.
-*/
 window.AFTER_INDEPENDENCE_LIBRARY = {
   id: "after-independence",
   name: "독립 이후의 노래",
@@ -125,10 +137,9 @@ window.AFTER_INDEPENDENCE_LIBRARY = {
     {
       id: "haeil-01",
       title: "해일",
-      activist: "독립 이후의 노래",
+      activist: "방어진고등학교 방송부 BBS",
       cover: "assets/covers/haeil.png",
-      video: "assets/videos/haeil.mp4",
+      youtube: YOUTUBE_LINKS.afterIndependence,
     },
   ],
 };
-

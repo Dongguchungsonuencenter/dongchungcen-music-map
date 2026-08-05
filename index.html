@@ -8,7 +8,7 @@
   <title>815Hz 프로젝트: 재생 중</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="korea-map-final.webp?v=20260805-6" as="image" type="image/webp" />
-  <link rel="stylesheet" href="style.css?v=20260805-6" />
+  <link rel="stylesheet" href="style.css?v=20260805-yt1" />
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -197,14 +197,27 @@
         <p id="dialog-region" class="mini-title"></p>
         <h2 id="dialog-title"></h2>
       </div>
-      <video id="video-player" controls playsinline preload="metadata"></video>
-      <p id="video-error" class="video-error" hidden>영상 파일을 불러오지 못했습니다. assets/videos 폴더의 파일명을 확인해주세요.</p>
+      <div class="player-frame">
+        <iframe
+          id="youtube-player"
+          class="youtube-player"
+          title="유튜브 뮤직비디오 재생 화면"
+          src="about:blank"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          hidden
+        ></iframe>
+        <video id="video-player" controls playsinline preload="metadata" hidden></video>
+      </div>
+      <p id="video-error" class="video-error" hidden>영상을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</p>
+      <a id="youtube-fallback-link" class="youtube-fallback-link" href="#" target="_blank" rel="noopener noreferrer" hidden>영상이 보이지 않으면 YouTube에서 열기</a>
     </div>
   </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js?v=20260805-6"></script>
-  <script src="data.js?v=20260805-6"></script>
-  <script src="script.js?v=20260805-6"></script>
+  <script src="config.js?v=20260805-yt1"></script>
+  <script src="data.js?v=20260805-yt1"></script>
+  <script src="script.js?v=20260805-yt1"></script>
 </body>
 </html>
