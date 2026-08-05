@@ -491,3 +491,498 @@ a { color: inherit; }
 }
 
 .map-album { pointer-events: none; }
+
+
+/* =========================================================
+   2026-08-05 지도 실제 수정
+   기존 저해상도 SVG 좌표 대신 승인된 한반도 지도 디자인을 사용합니다.
+   ========================================================= */
+.korea-map-image {
+  position: relative;
+  width: min(100%, 570px);
+  margin: 0 auto;
+  aspect-ratio: 570 / 760;
+  isolation: isolate;
+}
+.korea-map-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.map-cover-hotspot,
+.map-play-hotspot {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.map-cover-hotspot {
+  border-radius: 12px;
+}
+.map-cover-hotspot:hover,
+.map-cover-hotspot:focus-visible {
+  outline: 4px solid rgba(166, 61, 63, .85);
+  outline-offset: 3px;
+  filter: none;
+  stroke: none;
+}
+.map-cover-hotspot.active {
+  outline: 4px solid rgba(33, 60, 107, .9);
+  outline-offset: 3px;
+}
+.map-play-hotspot {
+  width: 8.5%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.map-play-hotspot:hover,
+.map-play-hotspot:focus-visible {
+  outline: 4px solid #fff;
+  box-shadow: 0 0 0 7px rgba(166, 61, 63, .9);
+}
+.map-play-hotspot:active {
+  transform: translate(-50%, -50%) scale(.92);
+}
+
+/* 표지 클릭 영역 */
+.north-cover       { left: 36.6%; top:  5.0%; width: 18.0%; height: 13.5%; }
+.seoul-cover       { left: 25.2%; top: 28.5%; width: 18.5%; height: 13.5%; }
+.gangwon-cover     { left: 60.8%; top: 29.5%; width: 18.5%; height: 13.5%; }
+.chungcheong-cover { left: 26.0%; top: 51.0%; width: 18.0%; height: 13.5%; }
+.jeolla-cover      { left: 21.5%; top: 71.0%; width: 18.0%; height: 13.5%; }
+.gyeongsang-cover  { left: 62.0%; top: 59.5%; width: 18.5%; height: 13.5%; }
+
+/* 이미지에 보이는 원형 재생 버튼과 정확히 겹치는 클릭 영역 */
+.north-play       { left: 45.3%; top: 17.1%; }
+.seoul-play       { left: 34.0%; top: 40.8%; }
+.gangwon-play     { left: 69.3%; top: 42.1%; }
+.chungcheong-play { left: 35.1%; top: 63.3%; }
+.jeolla-play      { left: 30.7%; top: 83.7%; }
+.gyeongsang-play  { left: 71.1%; top: 72.5%; }
+
+@media (max-width: 700px) {
+  .map-wrap {
+    min-height: 0;
+    padding-bottom: 82px;
+  }
+  .korea-map-image {
+    width: 100%;
+  }
+  .map-play-hotspot {
+    width: 10.5%;
+  }
+}
+
+
+/* =========================================================
+   2026-08-05 추가 보완
+   - 지도 이미지 확대감 완화
+   - 상단 잘린 글씨 제거
+   - 새 지도 이미지에 맞춰 클릭 위치 재조정
+   ========================================================= */
+.korea-map-image {
+  width: min(100%, 560px);
+  aspect-ratio: 720 / 840;
+}
+.korea-map-art {
+  object-fit: contain;
+}
+
+/* 새 지도 이미지 기준 클릭 영역 */
+.north-cover       { left: 45.6%; top:  2.1%; width: 14.2%; height: 12.2%; }
+.seoul-cover       { left: 36.6%; top: 23.4%; width: 14.6%; height: 12.2%; }
+.gangwon-cover     { left: 64.8%; top: 24.3%; width: 14.6%; height: 12.2%; }
+.chungcheong-cover { left: 37.3%; top: 43.8%; width: 14.2%; height: 12.2%; }
+.jeolla-cover      { left: 33.7%; top: 61.9%; width: 14.2%; height: 12.2%; }
+.gyeongsang-cover  { left: 65.8%; top: 51.5%; width: 14.6%; height: 12.2%; }
+
+.north-play       { left: 52.5%; top: 13.1%; }
+.seoul-play       { left: 43.6%; top: 34.5%; }
+.gangwon-play     { left: 71.5%; top: 35.7%; }
+.chungcheong-play { left: 44.5%; top: 54.9%; }
+.jeolla-play      { left: 41.0%; top: 73.3%; }
+.gyeongsang-play  { left: 73.0%; top: 63.2%; }
+
+@media (max-width: 700px) {
+  .korea-map-image {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   2026-08-05 모바일 가독성 보완
+   - 휴대폰 중심의 줄바꿈 정리
+   - 띄어쓰기 단위로 자연스럽게 줄바꿈
+   - 카드 내부 여백/글자 크기 재조정
+   ========================================================= */
+body,
+button,
+input,
+textarea,
+.site-header h1,
+.subtitle,
+.section-heading h2,
+.detail-topline h2,
+.map-help,
+.map-note p,
+.after-heading > p,
+.after-album-copy strong,
+.after-album-copy > span:last-child,
+.album-copy h3,
+.activist-name,
+#region-description,
+.choice-title-row span,
+.video-choice strong,
+.video-choice small,
+.primary-button,
+.view-label,
+.comments-heading h3,
+.comments-heading > span,
+.comment-form label > span,
+.comment-form-bottom p,
+.comment-item p,
+.site-footer p,
+.topbar p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.mobile-break { display: none; }
+
+@media (max-width: 900px) {
+  .site-header h1 { line-height: 1.16; }
+  .subtitle,
+  .topbar p,
+  .map-help,
+  .map-note p,
+  .after-heading > p,
+  #region-description,
+  .comment-item p,
+  .site-footer p { line-height: 1.65; }
+}
+
+@media (max-width: 640px) {
+  br.mobile-break { display: block; }
+
+  .topbar {
+    padding: 12px 16px 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .project-mark { font-size: 1.02rem; }
+  .topbar p {
+    max-width: 30ch;
+    font-size: .84rem;
+    line-height: 1.6;
+  }
+
+  .site-header {
+    padding: 34px 16px 18px;
+  }
+  .eyebrow,
+  .mini-title {
+    font-size: .73rem;
+    letter-spacing: .11em;
+    line-height: 1.5;
+  }
+  .site-header h1 {
+    font-size: clamp(2.05rem, 8.8vw, 2.9rem);
+    line-height: 1.18;
+    letter-spacing: -.045em;
+  }
+  .subtitle {
+    max-width: 17.5em;
+    margin-top: 14px;
+    font-size: 1.03rem;
+    line-height: 1.68;
+  }
+
+  .layout {
+    width: min(100% - 16px, 720px);
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+  .map-card,
+  .detail-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .section-heading,
+  .detail-topline,
+  .comments-heading,
+  .play-row,
+  .after-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .section-heading h2,
+  .detail-topline h2,
+  .after-heading h2 {
+    font-size: 1.5rem;
+    line-height: 1.32;
+  }
+  .map-help {
+    display: block;
+    text-align: left;
+    font-size: .92rem;
+    line-height: 1.62;
+  }
+
+  .map-wrap {
+    min-height: 0;
+    padding: 0 0 74px;
+    border-radius: 18px;
+  }
+  .map-wrap::before {
+    right: -40px;
+    top: 52%;
+    font-size: 5rem;
+  }
+  .korea-map-image {
+    width: 100%;
+    max-width: 540px;
+  }
+  .map-note {
+    left: 8px;
+    right: 8px;
+    bottom: 10px;
+    gap: 10px;
+    padding: 12px 14px;
+    align-items: flex-start;
+  }
+  .map-note > span { font-size: 1.15rem; }
+  .map-note p {
+    font-size: .9rem;
+    line-height: 1.66;
+  }
+
+  .after-independence {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+  .after-heading > p {
+    max-width: none;
+    text-align: left;
+    font-size: .93rem;
+    line-height: 1.68;
+  }
+  .after-album-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+  .after-cover-wrap {
+    width: min(100%, 270px);
+    justify-self: center;
+  }
+  .after-play {
+    width: 52px;
+    height: 52px;
+  }
+  .after-album-copy {
+    gap: 6px;
+  }
+  .after-badge { font-size: .78rem; }
+  .after-album-copy strong {
+    font-size: 1.95rem;
+    line-height: 1.15;
+  }
+  .after-album-copy > span:last-child {
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+  .after-card-meta {
+    grid-column: auto;
+    width: 100%;
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(20,40,76,.13);
+    border-left: 0;
+  }
+  .after-card-meta span { font-size: .84rem; }
+
+  .video-count-badge {
+    min-height: 32px;
+    font-size: .84rem;
+  }
+  .album-button {
+    margin-top: 14px;
+    border-radius: 18px;
+  }
+  .album-overlay {
+    gap: 8px;
+    padding: 44px 14px 14px;
+    font-size: .97rem;
+    line-height: 1.45;
+    text-align: center;
+  }
+  .album-play {
+    width: 36px;
+    height: 36px;
+  }
+  .album-copy {
+    padding: 16px 0 4px;
+  }
+  .album-copy h3 {
+    font-size: 1.42rem;
+    line-height: 1.34;
+  }
+  .activist-name {
+    margin: 8px 0 6px;
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+  #region-description {
+    font-size: .97rem;
+    line-height: 1.72;
+  }
+
+  .choice-wrap {
+    margin-top: 16px;
+    padding: 15px;
+    border-radius: 16px;
+  }
+  .choice-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .choice-title-row h3 {
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
+  .choice-title-row span {
+    font-size: .9rem;
+    line-height: 1.58;
+  }
+  .video-choice {
+    grid-template-columns: 56px 1fr auto;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 13px;
+  }
+  .video-choice img {
+    width: 56px;
+    height: 56px;
+  }
+  .video-choice strong {
+    font-size: .97rem;
+    line-height: 1.45;
+  }
+  .video-choice small {
+    display: block;
+    margin-top: 2px;
+    font-size: .84rem;
+    line-height: 1.5;
+  }
+
+  .primary-button {
+    min-height: 58px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    line-height: 1.45;
+    white-space: normal;
+  }
+  .view-box {
+    width: 100%;
+    min-height: 58px;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .view-label { font-size: .84rem; }
+  .view-box strong { font-size: 1.38rem; }
+
+  .comments {
+    margin-top: 22px;
+    padding-top: 20px;
+  }
+  .comments-heading h3 {
+    font-size: 1.26rem;
+    line-height: 1.35;
+  }
+  .comments-heading > span {
+    font-size: .92rem;
+  }
+  .comment-form {
+    gap: 13px;
+  }
+  .comment-form label {
+    gap: 7px;
+  }
+  .comment-form label > span {
+    font-size: .91rem;
+    line-height: 1.45;
+  }
+  .comment-form input,
+  .comment-form textarea {
+    padding: 13px 14px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .comment-form-bottom {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .comment-form-bottom p {
+    max-width: none;
+    font-size: .86rem;
+    line-height: 1.66;
+  }
+  .secondary-button {
+    width: 100%;
+    min-height: 52px;
+    font-size: 1rem;
+  }
+  .comment-item {
+    padding: 13px 14px;
+  }
+  .comment-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .comment-meta time { font-size: .79rem; }
+  .comment-item p {
+    font-size: .95rem;
+    line-height: 1.7;
+  }
+
+  .site-footer {
+    gap: 12px;
+    padding: 30px 16px 46px;
+  }
+  .site-footer p {
+    max-width: 28ch;
+    font-size: .89rem;
+    line-height: 1.72;
+  }
+  .admin-link {
+    right: 14px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header h1 { font-size: 1.95rem; }
+  .subtitle { font-size: 1rem; }
+  .section-heading h2,
+  .detail-topline h2,
+  .after-heading h2 { font-size: 1.4rem; }
+  .after-album-copy strong { font-size: 1.8rem; }
+  .album-copy h3 { font-size: 1.34rem; }
+}
