@@ -13,7 +13,7 @@ const YOUTUBE_LINKS = {
   chungcheong: "https://youtu.be/QpX5C9jUHNw", // 변경 가능
   gangwon: "https://youtu.be/534v2Cy8rfg", // 변경 가능
   gyeongsang1: "https://youtu.be/gILSVYlGFRI", // 변경 가능
-  gyeongsang2: "https://youtu.be/rz9tUk1KTws, // 변경 가능
+  gyeongsang2: "https://youtu.be/rz9tUk1KTws", // 변경 가능
   jeolla: "https://youtu.be/BbmUY3g-3pU", // 변경 가능
   northKorea: "https://youtu.be/QV_agrIPdaQ", // 변경 가능
   seoulGyeonggi: "https://youtu.be/Z_9Sk-e4niQ", // 변경 가능
