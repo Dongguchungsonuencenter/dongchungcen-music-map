@@ -1,17 +1,12 @@
 /*
   815Hz 영상 링크 설정
 
-  유튜브 영상이 바뀌면 아래 YOUTUBE_LINKS의 주소만 교체하세요.
-  다른 파일(index.html, script.js)은 수정하지 않아도 됩니다.
-
-  교체 가능성이 있는 영상:
-  - 충청도 윤봉길
-  - 경상도 2 박상진
-  - 서울·경기 유관순
+  모든 유튜브 영상은 아래 YOUTUBE_LINKS의 주소를 바꾸면 교체할 수 있습니다.
+  링크를 수정한 뒤 data.js와 index.html을 함께 GitHub에 덮어쓰세요.
 */
 const YOUTUBE_LINKS = {
   chungcheong: "https://youtu.be/QpX5C9jUHNw", // 변경 가능
-  gangwon: "https://youtu.be/534v2Cy8rfg", // 변경 가능
+  gangwon: "https://youtu.be/uD0eMdnngLw", // 변경 가능
   gyeongsang1: "https://youtu.be/gILSVYlGFRI", // 변경 가능
   gyeongsang2: "https://youtu.be/rz9tUk1KTws", // 변경 가능
   jeolla: "https://youtu.be/BbmUY3g-3pU", // 변경 가능
