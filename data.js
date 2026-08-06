@@ -18,10 +18,10 @@ const YOUTUBE_LINKS = {
 window.REGION_LIBRARY = [
   {
     id: "north-korea",
-    name: "한반도 북부",
+    name: "황해도",
     shortLabel: "황해도 해주",
     theme: "독립운동가의 기억",
-    description: "북한 지역과 연결된 독립운동가의 이야기를 청소년의 음악과 영상으로 만나보세요.",
+    description: "황해도 해주와 연결된 독립운동가의 이야기를 청소년의 음악과 영상으로 만나보세요.",
     videos: [
       {
         id: "north-korea-01",
@@ -53,7 +53,7 @@ window.REGION_LIBRARY = [
     name: "강원도",
     shortLabel: "강원도",
     theme: "나라를 위해 일어선 의병장",
-    description: "강원도 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
+    description: "강원도 춘천 출생의 독립운동가 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
         id: "gangwon-01",
@@ -69,7 +69,7 @@ window.REGION_LIBRARY = [
     name: "충청도",
     shortLabel: "충청도",
     theme: "굳은 마음으로 지킨 나라",
-    description: "충청도 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
+    description: "충청도 예산 출생의 독립운동가 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
         id: "chungcheong-01",
@@ -85,7 +85,7 @@ window.REGION_LIBRARY = [
     name: "전라도",
     shortLabel: "전라도",
     theme: "자유와 독립을 향한 결의",
-    description: "전라도 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
+    description: "전라도 부안 출생의 독립운동가 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
         id: "jeolla-01",
@@ -106,14 +106,14 @@ window.REGION_LIBRARY = [
       {
         id: "gyeongsang-01",
         title: "성세빈 독립운동가 이야기",
-        activist: "성세빈",
+        activist: "성세빈(울산 동구)",
         cover: "assets/covers/gyeongsang-1.png",
         youtube: YOUTUBE_LINKS.gyeongsang1,
       },
       {
         id: "gyeongsang-02",
         title: "박상진 독립운동가 이야기",
-        activist: "박상진",
+        activist: "박상진(울산 북구)",
         cover: "assets/covers/gyeongsang-2.png",
         youtube: YOUTUBE_LINKS.gyeongsang2,
       },
