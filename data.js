@@ -21,7 +21,7 @@ window.REGION_LIBRARY = [
     name: "황해도",
     shortLabel: "황해도 해주",
     theme: "독립운동가의 기억",
-    description: "황해도 해주와 연결된 독립운동가의 이야기를 청소년의 음악과 영상으로 만나보세요.",
+    description: "황해도 해주 출생의 독립운동가의 이야기를 청소년의 음악과 영상으로 만나보세요.",
     videos: [
       {
         id: "north-korea-01",
