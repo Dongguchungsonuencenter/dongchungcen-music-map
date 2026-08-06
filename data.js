@@ -10,21 +10,21 @@
   - 서울·경기 유관순
 */
 const YOUTUBE_LINKS = {
-  chungcheong: "https://youtu.be/a7El_k3DAbU", // 변경 가능
-  gangwon: "https://youtu.be/534v2Cy8rfg",
-  gyeongsang1: "https://youtu.be/qVsEJnwKnm0",
-  gyeongsang2: "https://youtu.be/l1ve4JBtn-I", // 변경 가능
-  jeolla: "https://youtu.be/MKj_84ebmXg",
-  northKorea: "https://youtu.be/QV_agrIPdaQ",
-  seoulGyeonggi: "https://youtu.be/Mm6s0OzFo2g", // 변경 가능
-  afterIndependence: "https://youtu.be/D7rqcv_ffnI",
+  chungcheong: "https://youtu.be/QpX5C9jUHNw", // 변경 가능
+  gangwon: "https://youtu.be/534v2Cy8rfg", // 변경 가능
+  gyeongsang1: "https://youtu.be/gILSVYlGFRI", // 변경 가능
+  gyeongsang2: "https://youtu.be/rz9tUk1KTws, // 변경 가능
+  jeolla: "https://youtu.be/BbmUY3g-3pU", // 변경 가능
+  northKorea: "https://youtu.be/QV_agrIPdaQ", // 변경 가능
+  seoulGyeonggi: "https://youtu.be/Z_9Sk-e4niQ", // 변경 가능
+  afterIndependence: "https://youtu.be/dVe1TYeQm5w", // 변경 가능
 };
 
 window.REGION_LIBRARY = [
   {
     id: "north-korea",
-    name: "북한",
-    shortLabel: "북한",
+    name: "한반도 북부",
+    shortLabel: "황해도 해주",
     theme: "독립운동가의 기억",
     description: "북한 지역과 연결된 독립운동가의 이야기를 청소년의 음악과 영상으로 만나보세요.",
     videos: [
@@ -41,8 +41,8 @@ window.REGION_LIBRARY = [
     id: "seoul-gyeonggi",
     name: "서울·경기",
     shortLabel: "서울·경기",
-    theme: "도시 위에 이어진 역사",
-    description: "서울과 경기 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
+    theme: "열일곱, 서울에서 만세를 외치다",
+    description: "충남 천안 출생인 유관순 열사의 서울 이화학당 시절과 3·1운동 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
         id: "seoul-gyeonggi-01",
@@ -57,7 +57,7 @@ window.REGION_LIBRARY = [
     id: "gangwon",
     name: "강원도",
     shortLabel: "강원도",
-    theme: "산과 바람이 전하는 이야기",
+    theme: "나라를 위해 일어선 의병장",
     description: "강원도 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
@@ -89,7 +89,7 @@ window.REGION_LIBRARY = [
     id: "jeolla",
     name: "전라도",
     shortLabel: "전라도",
-    theme: "들녘에 남은 독립의 노래",
+    theme: "자유와 독립을 향한 결의",
     description: "전라도 지역의 독립운동가 이야기를 담은 뮤직비디오입니다.",
     videos: [
       {
@@ -104,7 +104,7 @@ window.REGION_LIBRARY = [
   {
     id: "gyeongsang",
     name: "경상도",
-    shortLabel: "경상도",
+    shortLabel: "경상도(울산)",
     theme: "두 개의 노래로 만나는 경상도",
     description: "대표 앨범을 누르면 경상도 독립운동가 뮤직비디오 2편을 선택할 수 있습니다.",
     videos: [
