@@ -8,7 +8,7 @@
 */
 window.APP_CONFIG = {
   supabaseUrl: "https://txxwjvdssffdyjjvmxre.supabase.co",
-  supabaseAnonKey: "c989deb9-e1a1-41eb-b2e9-e5905479b547",
+  supabaseAnonKey: "sb_publishable_R0cZbSmeGg7zH69Hp-lY5Q_dhA98pzk",
   projectTitle: "815Hz 프로젝트: 재생 중",
   commentsEnabled: true,
   realtimeComments: true,
