@@ -5,7 +5,7 @@
   링크를 수정한 뒤 data.js와 index.html을 함께 GitHub에 덮어쓰세요.
 */
 const YOUTUBE_LINKS = {
-  chungcheong: "https://youtu.be/QpX5C9jUHNw", // 변경 가능
+  chungcheong: "https://youtu.be/KwzepKa0pQk", // 변경 가능
   gangwon: "https://youtu.be/uD0eMdnngLw", // 변경 가능
   gyeongsang1: "https://youtu.be/gILSVYlGFRI", // 변경 가능
   gyeongsang2: "https://youtu.be/rz9tUk1KTws", // 변경 가능
